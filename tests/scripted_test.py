@@ -28,7 +28,7 @@ class TestScripted(utils.TestCase):
     FLAGS(sys.argv)
 
     with sc2_env.SC2Env(
-        "DefeatZerglingsAndBanelings",
+        map_name="DefeatZerglingsAndBanelings",
         step_mul=self.step_mul,
         visualize=True,
         game_steps_per_episode=self.steps * self.step_mul) as env:
