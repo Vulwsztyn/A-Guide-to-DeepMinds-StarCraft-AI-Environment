@@ -31,6 +31,7 @@ class TestScripted(utils.TestCase):
         map_name="DefeatZerglingsAndBanelings",
         step_mul=self.step_mul,
         visualize=True,
+        players=[sc2_env.Agent(sc2_env.Race.terran)],
         game_steps_per_episode=self.steps * self.step_mul) as env:
       obs = env.step(actions=[sc2_actions.FunctionCall(_NO_OP, [])])
       player_relative = obs[0].observation["screen"][_PLAYER_RELATIVE]

@@ -21,6 +21,7 @@ def main():
   with sc2_env.SC2Env(
       map_name="CollectMineralShards",
       step_mul=step_mul,
+      players=[sc2_env.Agent(sc2_env.Race.terran)],
       visualize=True) as env:
 
     model = deepq.models.cnn_to_mlp(
