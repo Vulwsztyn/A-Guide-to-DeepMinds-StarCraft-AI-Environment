@@ -32,6 +32,10 @@ class TestScripted(utils.TestCase):
         step_mul=self.step_mul,
         visualize=True,
         players=[sc2_env.Agent(sc2_env.Race.terran)],
+        agent_interface_format=sc2_env.AgentInterfaceFormat(
+          feature_dimensions=sc2_env.Dimensions(
+          screen=64,
+          minimap=64)),
         game_steps_per_episode=self.steps * self.step_mul) as env:
       obs = env.step(actions=[sc2_actions.FunctionCall(_NO_OP, [])])
       player_relative = obs[0].observation["screen"][_PLAYER_RELATIVE]
